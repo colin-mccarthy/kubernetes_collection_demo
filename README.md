@@ -1,1 +1,1 @@
-# kubernets_collection_demo
+# kubernetes_collection_demo
