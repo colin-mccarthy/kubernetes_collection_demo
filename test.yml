@@ -1,0 +1,20 @@
+---
+- hosts: localhost
+  gather_facts: false
+  connection: local
+
+  collections:
+    - community.kubernetes
+
+  tasks:
+
+
+    - name: Get a list of all Services in the default namespace
+      community.kubernetes.k8s_info:
+        kind: Service
+        namespace: default
+      register: default_services
+
+    - name: Display Services in the default namespace
+      debug:
+        var: default_services.resources | count
